@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>DECRYPTION</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="decryption.css" />
+  </head>
+
+  <body>
+    <div class="mainapp">
+      <p>Decryption goes here...</p>
+      <div class="app">
+        <textarea
+          id="decryptText"
+          rows="8"
+          cols="45"
+          placeholder="Enter the Encrypted Text.."
+        ></textarea>
+      </div>
+      <!-- Align buttons side by side using Bootstrap grid -->
+      <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 20px;">
+        <button onclick="decrypt1()" class="btn btn-outline-success" id="decryptButton">
+          Decrypt
+        </button>
+        <button class="btn btn-dark button" style="margin-left: 20px;" id="pasteButton" onclick="pastetext()">
+          PasteText
+        </button>
+      </div>
+      <a href="index.html" class="home-link" style="margin-bottom: 20px;">Home</a>
+      <script>
+        async function pastetext() {
+          try {
+            const text = await navigator.clipboard.readText();
+            document.getElementById("decryptText").value = text;
+          } catch (err) {
+            console.error('Failed to read clipboard contents: ', err);
+          }
+        }
+        
+        function decrypt1() {
+          var key = "my secret key";
+          // Decrypt the message using AES
+          var message = document.getElementById("decryptText").value;
+          var decrypted = CryptoJS.AES.decrypt(message, key).toString(
+            CryptoJS.enc.Utf8
+          );
+
+          document.getElementById("decryptText").value = decrypted;
+          document.getElementById("decryptButton").disabled = true;
+        }
+      </script>
+    </div>
+  </body>
+</html>

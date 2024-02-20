@@ -1,0 +1,20 @@
+body{
+	background-image: url('./Assets/front.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-align: center;
+}
+
+.heading{
+	color: azure;
+	font-size: 70px;
+}
+.box{
+	margin-top: 200px;
+	text-decoration: none;
+}
+
+p{
+	margin-left: 90px;
+	color: azure;
+}

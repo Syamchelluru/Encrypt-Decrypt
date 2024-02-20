@@ -1,0 +1,66 @@
+body {
+    background-image: url('./Assets/encryp.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: azure
+}
+
+p {
+    padding-top: 50px;
+    text-align: justify;
+    padding-left: 80px;
+    font-size: x-large;
+
+}
+
+.app {
+    padding: 20px;
+    text-align: center;
+}
+
+textarea {
+    width: 80%;
+    height: 200px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 15px;
+}
+
+
+.popup {
+    width: 80%;
+    height: 200px;
+    background-color: white;
+    border: 1px solid black;
+    color: white;
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    text-align: left;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+[contentEditable=false]:empty:not(:focus):before {
+    content: attr(data-text)
+}
+
+.button {
+    margin:10px 20px;
+}
+
+.encryptme {
+    position: relative;
+    width: 105px;
+}
+
+
+.buttonGroup {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
