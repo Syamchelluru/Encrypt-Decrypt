@@ -8,45 +8,54 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-}
-
-/* Heading */
-.heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     color: azure;
-    font-size: 6vw; /* Scales with screen width */
-    margin: 50px 20px 20px 20px;
 }
 
 /* Box */
 .box {
-    margin-top: 15vh; /* Scales with viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Heading */
+.heading {
+    font-size: 6vw;
+    margin: 0;
+}
+
+/* Links inside headings */
+.heading a {
     text-decoration: none;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+.heading a:hover {
+    color: #ffd700;
 }
 
 /* Paragraph */
 p {
-    margin: 0 auto;
-    max-width: 90%; /* Prevent text from stretching too wide on desktop */
-    color: azure;
-    font-size: 4vw; /* Scales with screen width */
-    line-height: 1.5;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    text-align: center;
+    max-width: 90%;
 }
 
-/* Media Queries for Smaller Screens */
+/* Responsive */
 @media (max-width: 768px) {
     .heading {
-        font-size: 10vw; /* Bigger relative size on mobile */
+        font-size: 10vw;
     }
-
     p {
-        font-size: 5vw;
-        margin-left: 10px;
-        margin-right: 10px;
-        text-align: center;
-    }
-
-    .box {
-        margin-top: 10vh;
+        font-size: 1.2rem;
     }
 }
 
@@ -54,14 +63,7 @@ p {
     .heading {
         font-size: 12vw;
     }
-
     p {
-        font-size: 6vw;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-
-    .box {
-        margin-top: 8vh;
+        font-size: 1rem;
     }
 }

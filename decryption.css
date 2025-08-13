@@ -1,45 +1,116 @@
-body{
+/* General Body */
+body {
     background-image: url('./Assets/decry.jpg');
     background-size: cover;
-    
-}
-
-.mainapp {
-    height: 100vh;
-    width: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Main Container */
+.mainapp {
+    width: 90%;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px 20px;
+    border-radius: 15px;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+/* Paragraph */
+p {
+    font-size: 1.5rem;
     color: white;
+    margin-bottom: 20px;
 }
 
-
-button {
-    margin-top: 20px;
-}
-
-p{
-    font-size: x-large;
-}
-
+/* Textarea */
 textarea {
-    padding: 20px;
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
     background: rgba(255, 255, 255, 0.2);
     color: white;
-    border: none;
-    border-radius: 15px;
+    resize: vertical;
+    font-size: 1rem;
 }
+
+/* Buttons */
+button {
+    padding: 12px 25px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 10px 5px;
+    transition: 0.3s ease;
+}
+
+#decryptButton {
+    background-color: #28a745; /* Green */
+    color: white;
+}
+
+#pasteButton {
+    background-color: #343a40; /* Dark */
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Home Link */
 .home-link {
+    margin-top: 20px;
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff; /* Bootstrap primary color */
-    color: #fff;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
 .home-link:hover {
-    background-color: #0056b3; /* Darker shade of primary color on hover */
+    background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mainapp {
+        padding: 25px 15px;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+    textarea, button, .home-link {
+        width: 80%;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mainapp {
+        padding: 20px 10px;
+    }
+    p {
+        font-size: 1rem;
+    }
+    textarea, button, .home-link {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+    button {
+        padding: 10px 0;
+    }
 }
