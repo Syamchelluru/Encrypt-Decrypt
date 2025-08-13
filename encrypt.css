@@ -1,66 +1,136 @@
+/* General Body */
 body {
     background-image: url('./Assets/encryp.png');
-    background-repeat: no-repeat;
     background-size: cover;
-    color: azure
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-p {
-    padding-top: 50px;
-    text-align: justify;
-    padding-left: 80px;
-    font-size: x-large;
-
-}
-
-.app {
-    padding: 20px;
+/* Main Container */
+.mainapp {
+    width: 90%;
+    max-width: 650px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
+/* Paragraph */
+p {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Textarea */
 textarea {
-    width: 80%;
-    height: 200px;
-    padding: 20px;
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
     background: rgba(255, 255, 255, 0.2);
     color: white;
-    border: none;
-    border-radius: 15px;
+    resize: vertical;
+    font-size: 1rem;
 }
 
-
-.popup {
-    width: 80%;
-    height: 200px;
-    background-color: white;
-    border: 1px solid black;
-    color: white;
-    position: relative;
-    margin: auto;
-    padding: 20px;
-    text-align: left;
-    border: none;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.2);
-}
-
-[contentEditable=false]:empty:not(:focus):before {
-    content: attr(data-text)
-}
-
-.button {
-    margin:10px 20px;
-}
-
-.encryptme {
-    position: relative;
-    width: 105px;
-}
-
-
+/* Buttons */
 .buttonGroup {
     display: flex;
-    align-items: center;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.encryptBtn {
+    background-color: #dc3545; /* Red */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+.copyBtn {
+    background-color: #343a40; /* Dark */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+.encryptBtn:hover, .copyBtn:hover {
+    opacity: 0.8;
+}
+
+/* Links */
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.links a:hover {
+    color: #ffd700;
+}
+
+/* Copied Text Display */
+#copiedText {
+    margin-top: 15px;
+    color: #ffd700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    p {
+        font-size: 1.2rem;
+    }
+    textarea {
+        font-size: 0.95rem;
+    }
+    .encryptBtn, .copyBtn {
+        width: 45%;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    p {
+        font-size: 1rem;
+    }
+    textarea {
+        font-size: 0.9rem;
+    }
+    .buttonGroup {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    .encryptBtn, .copyBtn {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 0.9rem;
+    }
 }
