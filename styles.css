@@ -1,20 +1,67 @@
-body{
-	background-image: url('./Assets/front.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	text-align: center;
+/* General Body Styles */
+body {
+    background-image: url('./Assets/front.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-.heading{
-	color: azure;
-	font-size: 70px;
-}
-.box{
-	margin-top: 200px;
-	text-decoration: none;
+/* Heading */
+.heading {
+    color: azure;
+    font-size: 6vw; /* Scales with screen width */
+    margin: 50px 20px 20px 20px;
 }
 
-p{
-	margin-left: 90px;
-	color: azure;
+/* Box */
+.box {
+    margin-top: 15vh; /* Scales with viewport height */
+    text-decoration: none;
+}
+
+/* Paragraph */
+p {
+    margin: 0 auto;
+    max-width: 90%; /* Prevent text from stretching too wide on desktop */
+    color: azure;
+    font-size: 4vw; /* Scales with screen width */
+    line-height: 1.5;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 10vw; /* Bigger relative size on mobile */
+    }
+
+    p {
+        font-size: 5vw;
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: center;
+    }
+
+    .box {
+        margin-top: 10vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 12vw;
+    }
+
+    p {
+        font-size: 6vw;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .box {
+        margin-top: 8vh;
+    }
 }
